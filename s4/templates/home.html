@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<style>
+	li{display:inline;}
+	#leftul{margin-top:200px; margin-left:70px;}
+	#rightul{margin-top:200px; margin-right:70px;}
+</style>
+<script>
+	function fclose(){
+		history.back();
+		}
+</script>
+</head>
+
+<body id="bd" name="bd">
+	<ul id="ulofmenubar" name="ulofmenubar" >
+    	<li id="limenuhome" name="limenuhome"> <a id="amenuhome" name="amenuhome" href="{{url_for('home')}}">home</a></li>
+    	<li id="limenuprofile" name="limenuprofile"><a id="amenuprofile" name="amenuprofile" href="{{url_for('tanzimprofile')}}" >profile</a></li>
+        <li id="limenuabout" name="limenuabout"><a id="amenuabout" name="amenuabout" href="{{url_for('welcome')}}" >about us</a></li>
+        <li id="limenudignout" name="limenusignout"><button  id="btnmenusignout" name="btnmenusignout" value="sign out" type="button" onClick="fclose()" action="{{url_for('main')}}">sign out</button></li>
+	</ul>
+    <ul id="rightul" name="rightul">
+    	<li><form action="{{url_for('welcome')}}" method="get" id="search" name="search">   
+        	<textarea rows="1" cols="20" id="txtsearch" name="txtsearch" 		  				 			placeholder="search"></textarea><br>
+		<input type="submit" value="search" id="submitsearch" name="submitsearch" action="{{url_for('welcome')}}"/>
+</form></li>
+    </ul>
+    <ul id="leftul" name="leftul">
+    	<li id="liarchive" name="liarchive"><a href="{{url_for('writing')}}" id="aarchive" name="aarchive">archive </a></li>
+    </ul>
+    
+</body>
+</html>

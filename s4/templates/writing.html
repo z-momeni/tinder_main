@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+<title>writing</title>
+<style type="text/css">
+    p{font-family:arial; font-size:50pt; font-style:italic; text-align:center;}
+    body{background-repeat:no-repeat; background-attachment:scroll;}
+  </style>
+</head>
+
+<body>
+--{% if session.logged_in %}
+<p>test</p>
+{% endif %}
+<p>Welcome {{ session['username'] }} !</p>
+<form action="{{url_for('writing')}}" method="post">
+<textarea rows="40" cols="70"  style="margin-top:100px;margin-left:400px;" name="table"></textarea>
+<input type="submit" value="save" name="save" action = {{url_for('test')}}>
+<input type="submit" value="edit" name="edit" action = {{url_for('main')}}>
+<input type="submit" value="log out" name="log out" action = {{url_for('main')}}>
+<tr>
+        <td>year:</td>
+        <td><input type="text" name="year" size="20" maxlength="30"></td>
+        </tr>
+<tr>
+        <td>month:</td>
+        <td><input type="text" name="month" size="20" maxlength="30"></td>
+        </tr>
+<tr>
+        <td>day:</td>
+        <td><input type="text" name="day" size="20" maxlength="30"></td>
+        </tr>
+</form> 
+<ul style="margin-top:100px;">
+<li>
+<form name="select" action="demo_form_action.asp" method="get" size="3" >
+<select name="privacy">
+<option value="public" selected="public">public</option>
+<option value="private">private</option>
+<option value="just friends">just friends</option>
+</select>
+</form>
+</li>
+<li>
+<form name="select" action="demo_form_action.asp" method="get" size="" >
+<select name="font">
+<option value="font">font</option>
+<option value="courier">courier</option>
+<option value="arial">arial</option>
+<option value="arial black">arial black</option>
+<option value="impact">impact</option>
+<option value="verdana">verdana</option>
+<option value="time new roman">time new roman</option>
+<option value="georgia">georgia</option>
+<option value="andale mono">andale mono</option>
+ 
+</select>
+</form>
+</li>
+<li>
+
+<form name="select" action="demo_form_action.asp" method="get" size="" >
+<select name="size of font">
+<option value="size of font">size of font</option>
+<option value="8pt">8pt</option>
+<option value="10pt">10pt</option>
+<option value="12pt">12pt</option>
+<option value="14pt">14pt</option>
+<option value="18pt">18pt</option>
+<option value="24pt">24pt</option>
+<option value="36pt">36pt</option>
+</select>
+</form>
+</li>
+
+<li>
+<form name="select" action="demo_form_action.asp" method="get" size="" >
+<select name="color">
+<option value="color">color</option>
+<option value="black">black</option>
+<option value="white">white</option>
+<option value="red">red</option>
+<option value="green">green</option>
+<option value="blue">blue</option>
+<option value="yellow">yellow</option>
+<option value="orange">orange</option>
+</select>
+</form>
+
+</li>
+</ul>
+</body>
+</html>
+ 
