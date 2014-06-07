@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>profile</title>
+<link rel="stylesheet" href="static\css\style.css" type="text/css">
+</head> 
+<body id="bd" name"bd">
+<div id="cssmenu">
+<ul id="ulofmenubar" name="ulofmenubar" >
+ <li id="limenuhome" name="limenuhome" class="active"> <a id="amenuhome" name="amenuhome" href="{{url_for('home')}}">home</a></li>
+<li id="limenudiary" name="limenudiary"><a id="amenudiary" name="amenudiary" href="{{url_for('mydiary')}}" >mydiary</a></li>
+ <li id="limenuprofile" name="limenuprofile"><a id="amenuprofile" name="amenuprofile" href="{{url_for('profile')}}" >profile</a></li>
+
+ <li id="limenuabout" name="limenuabout"><a id="amenuabout" name= "amenuabout" href="{{url_for('welcome')}}" >about us</a></li>
+
+ <li id="limenudignout" name="limenusignout" class="last"><!--<button  id="btnmenusignout" name="btnmenusignout" value="sign out" type="button" onClick="fclose()" >sign out</button>--><a id="menusignout" name="btnmenusignout" href="{{url_for('main')}}">sign out</a></li>
+ 
+ <li id="liarchive" name="liarchive"><a href="{{url_for('writing')}}" id="aarchive" name="aarchive">writing memoir</a></li>
+
+<li id="lifriends" name="lifriends" ><a href="{{url_for('welcome')}}" id="friends" name= "friends" >friends</a></li>
+
+<li><form action="{{url_for('home')}}" method="post" id="search" name="search" class="search">
+ 	
+        <td><input type="text" name="txtsearch" size="20" maxlength="40"></td>
+
+            <input type="submit" value="search" id="submitsearch" name="submitsearch" action="{{url_for('test')}}"/>
+ 
+            </form>
+ </li>
+ </ul>
+ </div>
+    <div class="divedtpro" >
+      <img src="static\img\o1.jpg" alt="yourprofile" height="50" width="50" >
+        <table align="center">
+        <tr>
+
+            </td>
+		<tr><td><a href="{{url_for('tanzimprofile')}}" >edit yourprofile</a> </td></tr>
+ 
+            </tr>
+            <td colspan="2"><hr></td>
+        	<tr >
+            	<td><p>about you</p></td>
+            </tr>
+            <td colspan="2"><hr></td>
+        	<tr >
+	  {% if firstname %}
+            	<td>firstname:</td>
+        <td> {{firstname}}</td>
+
+	{% endif %}
+      </tr>
+      <tr>
+	 {% if lastname %}
+       <td>lastname:</td>
+        <td>{{lastname}}</td>
+	{% endif %}
+      </tr>
+      <tr>
+	  {% if age %}
+       <td>age:</td>
+        <td>{{age}} </td> 
+	{% endif %}
+      </tr>
+      <tr>
+	  {% if email %}
+      	<td>email:</td>
+        <td>{{email}}</td>
+        {% endif %}
+	</tr>
+      <tr> 
+	  {% if country %}
+       <td>country:</td>
+
+        <td>{{country}}</td> 
+        {% endif %}
+        </tr>
+        <tr>
+ 	  {% if gender %}
+      <td>gender:</td>
+ 
+        <td>{{gender}}</td>
+         {% endif %}
+      </tr>
+      <td colspan="2"><hr></td>
+      <tr>
+      	<td colspan="2"><p>work and education</p></td>
+
+      </tr>
+       <tr>
+	  {% if education %}
+       <td>education:</td>
+        <td>{{education}}</td>   
+         {% endif %}
+      </tr>
+
+      <tr>
+ 	  {% if work %}
+      <td>work:</td>
+ 
+        <td>{{work}}</td>
+         {% endif %}
+      </tr>
+      <tr>
+	{% if college %}
+      <td>college:</td>
+ 
+        <td>{{college}}</td>
+         {% endif %}
+      </tr>
+
+      <tr>
+	 {% if school %}
+      <td>school:</td>
+        <td>{{school}}</td>
+         {% endif %}
+      </tr>
+ 
+      <td colspan="2"><hr></td>
+ 
+      <tr>
+	  {% if biography %}
+      	<td>biography:</td><br><br> 
+         <td>{{biography}}</td>
+        {% endif %}
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
+ 
+ 
+ 
+
