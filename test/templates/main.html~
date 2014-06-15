@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+<title>main</title>
+
+  <style type="text/css">
+    p{font-family:arial; font-size:30pt; color:#333;font-style:italic; text-align:center;
+	margin-top:500px;margin-left:500px;}
+    body{ background-image:url("/static/img/01.jpg"); background-repeat:no-repeat; background-attachment:scroll;}
+	a:hover{font-size:60px;font-weight:600;color:#600;}
+  </style>
+</head>
+<body>
+<p>
+ <a href="{{url_for('signin')}}" >sign in</a>&nbsp;&nbsp;
+
+ <a href="{{url_for('signup')}}">sign up</a>
+ </p>
+</body>
+</html>
