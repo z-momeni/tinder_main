@@ -1,0 +1,159 @@
+﻿
+<!doctype html>
+
+<html>
+
+<head>
+
+<title>writing memoir</title>
+
+  <link rel="stylesheet" href="static\css\style.css" type="text/css">
+
+</head>
+
+<body id="bd" name="bd" >
+
+<div id="cssmenu">
+
+	<ul id="ulofmenubar" name="ulofmenubar" >
+
+    	<li id="limenuhome" name="limenuhome" class="active"> <a id="amenuhome" name="amenuhome" href="{{url_for('home')}}">home</a></li>       
+
+    	<li id="limenuprofile" name="limenuprofile"><a id="amenuprofile" name="amenuprofile" href="{{url_for('profile')}}" >profile</a></li>
+
+        <li id="limenuabout" name="limenuabout"><a id="amenuabout" name="amenuabout" href="{{url_for('welcome')}}" >about us</a></li>
+
+        <li id="limenudignout" name="limenusignout" class="last"><!--<button  id="btnmenusignout" name="btnmenusignout" value="sign out" type="button" onClick="fclose()" >sign out</button>--><a id="menusignout" name="menusignout" href="{{url_for('main')}}">sign out</a></li>
+
+    	<li id="liarchive" name="liarchive"><a href="{{url_for('writing')}}" id="aarchive" name="aarchive">writing memoir</a></li>
+
+        <li id="lifriends" name="lifriends" ><a href="{{url_for('welcome')}}" id="friends" name="friends" >friends</a></li>
+
+        <li><form action="{{url_for('writing')}}" method="post" id="search" name="search" class="search">
+
+        	<textarea rows="1" cols="20" id="txtsearch" name="txtsearch" 		  				 			placeholder="search for friends" ></textarea>
+
+            <input type="submit" value="search" class="testbutton" id="submitsearch" name="submitsearch" action="{{url_for('test')}}"/>
+            </form></li>
+
+	</ul>
+
+    </div>
+
+<form action="{{url_for('writing')}}" method="post" >
+
+<textarea rows="1" cols="4" name="year" placeholder="year" ></textarea>
+
+ <textarea rows="1" cols="4" name="month" placeholder="month" ></textarea>
+
+ <textarea rows="1" cols="4" name="day" placeholder="day" ></textarea>
+
+ <textarea rows="1" cols="10" name="title" placeholder="title" ></textarea>
+
+ <br>
+
+ <select name="font" class="testbutton">
+
+<option value="font" >font</option>
+
+<option value="courier">courier</option>
+
+<option value="arial">arial</option>
+
+<option value="arial black">arial black</option>
+
+<option value="impact">impact</option>
+
+<option value="verdana">verdana</option>
+
+<option value="time new roman">time new roman</option>
+
+<option value="georgia">georgia</option>
+
+<option value="andale mono">andale mono</option>
+
+</select>
+
+
+<select name="size of font" class="testbutton">
+
+<option value="size of font">size of font</option>
+
+<option value="8pt">8pt</option>
+
+<option value="10pt">10pt</option>
+
+<option value="12pt">12pt</option>
+
+<option value="14pt">14pt</option>
+
+<option value="18pt">18pt</option>
+
+<option value="24pt">24pt</option>
+
+<option value="36pt">36pt</option>
+
+</select>
+
+
+<select name="color" class="testbutton">
+
+<option value="color">color</option>
+
+<option value="black">black</option>
+
+<option value="white">white</option>
+
+<option value="red">red</option>
+
+<option value="green">green</option>
+
+<option value="blue">blue</option>
+
+<option value="yellow">yellow</option>
+
+<option value="orange">orange</option>
+
+</select>
+
+
+
+<textarea name="text" rows="40" cols="70"  style="margin-top:100px;margin-left:400px;"></textarea>
+
+<input type="file" name="file" multiple value="choose file" placeholder="choose image" class="testbutton"><!--for upload image-->
+
+<br>
+
+<input type="button" value="like" name="like" class="testbutton">
+
+<input type="button" value="comment" name="comment"  onClick="" class="testbutton">
+
+<input type="button" value="add your feel" name="feel" class="testbutton" >
+
+<select name="privacy" class="testbutton">
+
+<option value="public" selected="public" onClick="">public</option>
+
+<option value="private" onClick="">private</option>
+
+<option value="just friends" onClick="">just friends</option>
+
+</select>
+
+
+<button value="tag" name="tag" onClick="" class="testbutton">tag</button>
+
+<br>
+
+<input type="submit" value="send" name="send" class="testbutton">
+
+<input type="reset" value="cancel" name="cancel" class="testbutton">
+
+</form>
+
+</body>
+
+</html>
+
+
+
