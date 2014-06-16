@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+Design by http://www.bluewebtemplates.com
+Released for free under a Creative Commons Attribution 3.0 License
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>writing memoir</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="/static/css/style.css" rel="stylesheet" type="text/css" />
+<!-- CuFon: Enables smooth pretty custom font rendering. 100% SEO friendly. To disable, remove this section -->
+<script type="text/javascript" src="/static/js/cufon-yui.js"></script>
+<script type="text/javascript" src="/static/js/arial.js"></script>
+<script type="text/javascript" src="/static/js/cuf_run.js"></script>
+<!-- CuFon ends -->
+</head>
+<body>
+<div class="main">
+
+  <div class="header">
+    <div class="header_resize">
+      <div class="logo"><h1><a href="{{url_for('home')}}"><span>tinder</span></a></h1></div>
+      <div class="clr"></div>
+      <div class="menu_nav">
+        <ul>
+            <li><a href="{{url_for('home')}}">Home</a></li>
+            <li><a href="{{url_for('mydiary')}}">My Diary</a></li>
+            <li class="active"><a href="{{url_for('writing')}}">Writing Memoir</a></li>
+            <li><a href="{{url_for('friends')}}">Friends</a></li>
+            <li><a href="{{url_for('profile')}}">Profile</a></li>
+            <li><a href="{{url_for('settings')}}">Settings</a></li>
+            <li><a href="{{url_for('welcome')}}">About Us</a></li>
+            <li><a href="{{url_for('main')}}">Sign Out</a></li>
+        </ul>
+      </div>
+      <div class="searchform">
+        <form id="formsearch" name="formsearch" method="post" action="">
+          <input name="button_search" src="/static/img/search_btn.gif" class="button_search" type="image" />
+          <span><input name="editbox_search" class="editbox_search" id="editbox_search" maxlength="80" value="Search" type="text" /></span>
+          <div class="clr"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+        <div class="article">
+         <!--   <textarea rows="1" cols="10" name="title" placeholder="title" ></textarea>-->
+            <br>
+
+
+<form method="post" action = "{{url_for('writing')}}" name = "writing">
+            <textarea name="text" rows="30" cols="50"></textarea>
+
+            <input type="file" name="file" multiple value="choose file" placeholder="choose image" class="testbutton"><!--for upload image-->
+
+            <br>
+
+            <select name="font" class="testbutton">
+                <option value="font" >font</option>
+                <option value="courier">courier</option>
+                <option value="arial">arial</option>
+                <option value="arial black">arial black</option>
+                <option value="impact">impact</option>
+                <option value="verdana">verdana</option>
+                <option value="time new roman">time new roman</option>
+                <option value="georgia">georgia</option>
+                <option value="andale mono">andale mono</option>
+            </select>
+
+            <select name="size of font" class="testbutton">
+                <option value="size of font">size of font</option>
+                <option value="8pt">8pt</option>
+                <option value="10pt">10pt</option>
+                <option value="12pt">12pt</option>
+                <option value="14pt">14pt</option>
+                <option value="18pt">18pt</option>
+                <option value="24pt">24pt</option>
+                <option value="36pt">36pt</option>
+            </select>
+
+            <select name="color" class="testbutton">
+                <option value="color">color</option>
+                <option value="black">black</option>
+                <option value="white">white</option>
+                <option value="red">red</option>
+                <option value="green">green</option>
+                <option value="blue">blue</option>
+                <option value="yellow">yellow</option>
+                <option value="orange">orange</option>
+            </select>
+
+            <input type="button" value="add your feeling" name="feeling" class="testbutton" >
+
+            <select name="privacy" class="testbutton">
+                <option value="public" selected="public" onClick="">public</option>
+                <option value="private" onClick="">private</option>
+                <option value="just friends" onClick="">just friends</option>
+            </select>
+
+            <input  type="text" name="year" placeholder="year" size="2" maxlength="4" >
+            <input  type="text" name="month" placeholder="month" size="2" maxlength="2" >
+            <input  type="text" name="day" placeholder="day" size="2" maxlength="2">
+            <input  type="text" name="title" placeholder="title" size="6" maxlength="20" >
+
+            <input type="submit" value="tag" name="tag" class="testbutton" href="{{url_for('writing')}}">
+          <!--  <button value="tag" name="tag" onClick="" class="testbutton">tag</button>-->
+<!--	{% if friend %}
+		{% for i in friend %}
+            <input  type="text" name="t1" placeholder="t1" size="2" maxlength="4" >
+		{% endfor %}
+	{% endif %}-->
+            <br>
+
+            <input type="submit" value="save" name="save" class="testbutton" href="{{url_for('home')}}">
+            <input type="reset" value="cancel" name="cancel" class="testbutton">
+
+            </form>
+          <ul class="sb_menu">
+            <li><a href="#"><strong>Lorem ipsum</strong></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="gadget">
+          <h2 class="star"><span>Sidebar</span> Menu</h2><div class="clr"></div>
+          <ul class="sb_menu">
+             <li><a href="{{url_for('home')}}">Home</a></li>
+            <li><a href="{{url_for('mydiary')}}">My Diary</a></li>
+            <li class="active"><a href="{{url_for('writing')}}">Writing Memoir</a></li>
+            <li><a href="{{url_for('friends')}}">Friends</a></li>
+            <li><a href="{{url_for('profile')}}">Profile</a></li>
+            <li><a href="{{url_for('settings')}}">Settings</a></li>
+            <li><a href="{{url_for('welcome')}}">About Us</a></li>
+          </ul>
+        </div>
+        <div class="gadget">
+          <h2 class="star"><span>Sponsors</span></h2><div class="clr"></div>
+          <ul class="ex_menu">
+            <li><a href="http://www.dreamtemplate.com" title="Website Templates">DreamTemplate</a><br />Over 6,000+ Premium Web Templates</li>
+            <li><a href="http://www.templatesold.com" title="WordPress Themes">TemplateSOLD</a><br />Premium WordPress &amp; Joomla Themes</li>
+            <li><a href="http://www.imhosted.com" title="Affordable Hosting">ImHosted.com</a><br />Affordable Web Hosting Provider</li>
+            <li><a href="http://www.dreamstock.com" title="Stock Photos">DreamStock</a><br />Download Amazing Stock Photos</li>
+            <li><a href="http://www.evrsoft.com" title="Website Builder">Evrsoft</a><br />Website Builder Software &amp; Tools</li>
+            <li><a href="http://www.myvectorstore.com" title="Stock Icons">MyVectorStore</a><br />Royalty Free Stock Icons</li>
+          </ul>
+        </div>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+
+  <div class="fbg">
+    <div class="fbg_resize">
+      <div class="col c1">
+        <h2><span>Image Gallery</span></h2>
+        <a href="#"><img src="/static/img/pic1.jpg" width="56" height="56" alt="pix" /></a>
+        <a href="#"><img src="/static/img/pic2.jpg" width="56" height="56" alt="pix" /></a>
+        <a href="#"><img src="/static/img/pic3.jpg" width="56" height="56" alt="pix" /></a>
+        <a href="#"><img src="/static/img/pic4.jpg" width="56" height="56" alt="pix" /></a>
+        <a href="#"><img src="/static/img/pic5.jpg" width="56" height="56" alt="pix" /></a>
+        <a href="#"><img src="/static/img/pic6.jpg" width="56" height="56" alt="pix" /></a>
+      </div>
+      <div class="col c2">
+        <h2><span>Lorem Ipsum</span></h2>
+        <p>Lorem ipsum dolor<br />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. <a href="#">Morbi tincidunt, orci ac convallis aliquam</a>, lectus turpis varius lorem, eu posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum, dui pede condimentum odio, ac blandit ante orci ut diam.</p>
+      </div>
+      <div class="col c3">
+        <h2><span>About</span></h2>
+        <img src="/static/img/white.jpg" width="56" height="56" alt="pix" />
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo. llorem, eu posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum. <a href="#">Learn more...</a></p>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer_resize">
+      <p class="lf">&copy; Copyright MyWebSite. Designed by Blue <a href="http://www.bluewebtemplates.com">Website Templates</a></p>
+      <ul class="fmenu">
+          <li><a href="{{url_for('home')}}">Home</a></li>
+            <li><a href="{{url_for('mydiary')}}">My Diary</a></li>
+            <li class="active"><a href="{{url_for('writing')}}">Writing Memoir</a></li>
+            <li><a href="{{url_for('friends')}}">Friends</a></li>
+            <li><a href="{{url_for('profile')}}">Profile</a></li>
+            <li><a href="{{url_for('settings')}}">Settings</a></li>
+            <li><a href="{{url_for('welcome')}}">About Us</a></li>
+      </ul>
+      <div class="clr"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

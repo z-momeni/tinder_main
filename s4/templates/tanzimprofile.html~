@@ -1,0 +1,53 @@
+﻿<!doctype html>
+<html>
+<head>
+<title>tanzim profile</title>
+<style type="text/css">
+    p{font-family:arial; font-size:50pt; font-style:italic; text-align:center;}
+    body{ background-image:url("/static/img/01.jpg"); background-repeat:no-repeat; background-attachment:scroll;}
+  </style>
+</head>
+<body> 
+--{% if session.logged_in %}
+<p>test</p>
+{% endif %}
+ <p><marquee style="color:yellow;" behaivior="alternative" loop="infinit" width="400" height="100">     Tinder</marquee></p> 
+ <div align="center">
+  <form action="{{url_for('tanzimprofile')}}" method="post">
+    <table border="0" style="margin-top:20px; border-color:white border-style:ridge;">
+      <tr>
+       <td>firstname:</td>
+       <td><input type="text" name="firstname" size="20" maxlength="30"></td>
+      </tr>
+      <tr>
+       <td>lastname:</td>
+       <td><input type="text" name="lastname" size="20" maxlength="10" ></td>
+      </tr>
+      <tr>
+       <td>email:</td>
+       <td><input type="text" name="email" size="20" maxlength="10" > </td> 
+      </tr>
+      <tr>
+       <td>age:</td>
+       <td><input type="text" name="age" size="20" maxlength="40" ></td>  
+      </tr>
+      <tr>
+       <td>country:</td>
+       <td><input type="text" name="country" size="20" maxlength="40" ></td>  
+      </tr>
+	<tr>
+       <td>biography:
+	<textarea class = "biog" rows="20" cols="50"  style="margin-top:100px;margin-left:400px;" name="biography"></textarea>
+</td>
+      </tr>
+      <tr>
+       <td colspan="2"  align="center" ><input type="submit" value="send" name="send" >
+       <input type="reset" value="reset" name="reset" ></td>
+      </tr>
+        
+    
+    </table>
+   </form>
+ </div>
+</body>
+</html>

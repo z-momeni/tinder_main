@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<div id="friends" name="friends" >                        
+{% with messages = get_flashed_messages() %}
+{% if friends %}
+{%block body%}
+{% for key, value in friends %}
+    <dt>{{ key|e }}</dt>
+    <dd>{{ value|e }}</dd>
+{% endfor %}
+
+{% endblock %}
+{% endif%}
+{% endwith %}
+<hr>
+</div>
+</body>
+</html>
+
+
