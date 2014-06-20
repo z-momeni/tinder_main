@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+Design by http://www.bluewebtemplates.com
+Released for free under a Creative Commons Attribution 3.0 License
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Tinder</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="/static/css/style.css" rel="stylesheet" type="text/css" />
+<!-- CuFon: Enables smooth pretty custom font rendering. 100% SEO friendly. To disable, remove this section -->
+<script type="text/javascript" src="/static/js/cufon-yui.js"></script>
+<script type="text/javascript" src="/static/js/arial.js"></script>
+<script type="text/javascript" src="/static/js/cuf_run.js"></script>
+<!-- CuFon ends -->
+</head>
+<body>
+<div class="main">
+
+  <div class="header">
+    <div class="header_resize">
+      <div class="logo"><h1><a href="{{url_for('home')}}"><span>tinder</span></a></h1></div>
+      <div class="clr"></div>
+      <div class="menu_nav">
+        <ul>
+            <li><a href="{{url_for('home')}}">Home</a></li>
+            <li class="active"><a href="{{url_for('mydiary')}}">My Diary</a></li>
+            <li><a href="{{url_for('public_user')}}" name= "amenupublic">Public page</a></li>
+            <li><a href="{{url_for('writing')}}">Writing Memoir</a></li>
+            <li><a href="{{url_for('friends')}}">Friends</a></li>
+            <li><a href="{{url_for('profile')}}">Profile</a></li>
+            <li><a href="{{url_for('settings')}}">Settings</a></li>
+            <li><a href="{{url_for('welcome')}}">About Us</a></li>
+            <li><a href="{{url_for('main')}}">Sign Out</a></li>
+        </ul>
+      </div>
+      <div class="searchform">
+        <form id="search" name="search" method="post" action="{{url_for('home')}}" value="search">
+          <input name="submitsearch" src="/static/img/search_btn.gif" class="button_search" type="submit" value="search" />
+          <span><input name="txtsearch" class="editbox_search" id="editbox_search" maxlength="80"  placeholder="search" type="text" /></span>
+          <div class="clr"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+          <table align="center" class="table">
+              <tr>
+			<td><a href="{{url_for('diary1')}}" title="januery" name="januery" ><img src="/static/img/z3.jpg" alt="januery" height="200" width="200"></a>  </td>
+                  <td><a href="{{url_for('diary2')}}" title="febuery" name="febuery"><img src="/static/img/z1.jpg" alt="febuery" height="200" width="200"></a> </td>
+                  <td><a href="{{url_for('diary3')}}" title="march" name="march" ><img src="/static/img/b1.jpg" id="b1" alt="march" height="200" width="200" onmouseover="b1changeImage()" onmouseout="b1changeImage()" class="enlarge"></a></td></tr>
+
+<tr>
+                  <td><a href="{{url_for('diary4')}}" title="april" name="april"><img src="/static/img/b2.jpg" id="b2" alt="april" height="200" width="200" onmouseover="b2changeImage()" onmouseout="b2changeImage()"></a></td>
+                  <td><a href="{{url_for('diary5')}}" title="may" name="may"><img src="/static/img/b3.jpg" id="b3" alt="may" height="200" width="200" onmouseover="b3changeImage()" onmouseout="b3changeImage()"></a></td>
+             
+              
+            <td><a href="{{url_for('diary6')}}" title="june" name="june"><img src="/static/img/t1.jpg" alt="june" height="200" width="200" ></a></td></tr>
+
+<tr>
+            <td><a href="{{url_for('diary7')}}" title="july" name="july"><img src="/static/img/t2.jpg" alt="july" height="200" width="200" ></a></td>
+            <td><a href="{{url_for('diary8')}}" title="august" name="august"><img src="/static/img/t3.jpg" alt="august" height="200" width="200" ></a></td>
+              
+             
+                  <td><a href="{{url_for('diary9')}}" title="september" name="september"><img src="/static/img/p1.jpg" alt="september" height="200" width="200" ></a></td>
+</tr>
+<tr>
+                  <td><a href="{{url_for('diary10')}}" title="octobr" name="october"><img src="/static/img/p3.jpg" alt="octobr" height="200" width="200"></a></td>
+                  <td><a href="{{url_for('diary11')}}" title="novamber" name="november"><img src="/static/img/p2.jpg" alt="novamber" height="200" width="200"  ></a></td>
+             
+             
+                  <td><a href="{{url_for('diary12')}}" title="besember" name="desember"><img src="/static/img/z2.jpg" alt="desmber" height="200" width="200"></a></td>
+                  
+              </tr>
+          </table>
+        </div>
+      <div class="sidebar">
+        <div class="gadget">
+          <h2 class="star"><span>Sidebar</span> Menu</h2><div class="clr"></div>
+          <ul class="sb_menu">
+              <li><a href="{{url_for('home')}}">Home</a></li>
+            <li class="active"><a href="{{url_for('mydiary')}}">My Diary</a></li>
+            <li><a href="{{url_for('public_user')}}" name= "amenupublic">Public page</a></li>
+            <li><a href="{{url_for('writing')}}">Writing Memoir</a></li>
+            <li><a href="{{url_for('friends')}}">Friends</a></li>
+            <li><a href="{{url_for('profile')}}">Profile</a></li>
+            <li><a href="{{url_for('settings')}}">Settings</a></li>
+            <li><a href="{{url_for('welcome')}}">About Us</a></li>
+          </ul>
+        </div>
+        <div class="gadget">
+          <h2 class="star"><span>Sponsors</span></h2><div class="clr"></div>
+          <ul class="ex_menu">
+            <li><a href="http://www.dreamtemplate.com" title="Website Templates">DreamTemplate</a><br />Over 6,000+ Premium Web Templates</li>
+            <li><a href="http://www.templatesold.com" title="WordPress Themes">TemplateSOLD</a><br />Premium WordPress &amp; Joomla Themes</li>
+            <li><a href="http://www.imhosted.com" title="Affordable Hosting">ImHosted.com</a><br />Affordable Web Hosting Provider</li>
+            <li><a href="http://www.dreamstock.com" title="Stock Photos">DreamStock</a><br />Download Amazing Stock Photos</li>
+            <li><a href="http://www.evrsoft.com" title="Website Builder">Evrsoft</a><br />Website Builder Software &amp; Tools</li>
+            <li><a href="http://www.myvectorstore.com" title="Stock Icons">MyVectorStore</a><br />Royalty Free Stock Icons</li>
+          </ul>
+        </div>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+
+  <div class="fbg">
+    <div class="fbg_resize">
+      <div class="col c1">
+        <h2><span>Image Gallery</span></h2>
+        <a href="#"><img src="/static/img/pic1.jpg" width="56" height="56" alt="pix" /></a>
+        <a href="#"><img src="/static/img/pic2.jpg" width="56" height="56" alt="pix" /></a>
+        <a href="#"><img src="/static/img/pic3.jpg" width="56" height="56" alt="pix" /></a>
+        <a href="#"><img src="/static/img/pic4.jpg" width="56" height="56" alt="pix" /></a>
+        <a href="#"><img src="/static/img/pic5.jpg" width="56" height="56" alt="pix" /></a>
+        <a href="#"><img src="/static/img/pic6.jpg" width="56" height="56" alt="pix" /></a>
+      </div>
+      <div class="col c2">
+        <h2><span>Lorem Ipsum</span></h2>
+        <p>Lorem ipsum dolor<br />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. <a href="#">Morbi tincidunt, orci ac convallis aliquam</a>, lectus turpis varius lorem, eu posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum, dui pede condimentum odio, ac blandit ante orci ut diam.</p>
+      </div>
+      <div class="col c3">
+        <h2><span>About</span></h2>
+        <img src="/static/img/white.jpg" width="56" height="56" alt="pix" />
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo. llorem, eu posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum. <a href="#">Learn more...</a></p>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer_resize">
+      <p class="lf">&copy; Copyright MyWebSite. Designed by Blue <a href="http://www.bluewebtemplates.com">Website Templates</a></p>
+      <ul class="fmenu">
+          <li><a href="{{url_for('home')}}">Home</a></li>
+            <li class="active"><a href="{{url_for('mydiary')}}">My Diary</a></li>
+            <li><a href="{{url_for('public_user')}}" name= "amenupublic">Public page</a></li>
+            <li><a href="{{url_for('writing')}}">Writing Memoir</a></li>
+            <li><a href="{{url_for('friends')}}">Friends</a></li>
+            <li><a href="{{url_for('profile')}}">Profile</a></li>
+            <li><a href="{{url_for('settings')}}">Settings</a></li>
+            <li><a href="{{url_for('welcome')}}">About Us</a></li>
+      </ul>
+      <div class="clr"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
