@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+<html>
+<h1>profile</h1>
+{% block body %}
+<form action="{{url_for('friendprofile')}}" method="post">
+{% if firstname %}
+    <p class="error"><strong>Firstname:</strong> {{ firstname }}
+{% endif %}
+
+{% if lastname %}
+    <p class="error"><strong>Lastname:</strong> {{ lastname }}
+  {% endif %}
+
+{% if age %}
+    <p class="error"><strong>Age:</strong> {{ age }}
+  {% endif %}
+
+{% if gender %}
+    <p class="error"><strong>Gender:</strong> {{ gender }}
+  {% endif %}
+
+{% if email %}
+    <p class="error"><strong>Email:</strong> {{ email }}
+  {% endif %}
+
+{% if country %}
+    <p class="error"><strong>Country:</strong> {{ country }}
+  {% endif %}
+
+
+{% if education %}
+    <p class="error"><strong>Education:</strong> {{ education }}
+  {% endif %}
+
+{% if work %}
+    <p class="error"><strong>Work:</strong> {{ work }}
+  {% endif %}
+
+{% if college %}
+    <p class="error"><strong>College:</strong> {{ college }}
+  {% endif %}
+
+{% if school %}
+    <p class="error"><strong>School:</strong> {{ school }}
+  {% endif %}
+
+
+{% if biography %}
+    <p class="error"><strong>Biography:</strong> {{ biography }}
+  {% endif %}
+
+<input id="submit" type="submit"  name="edit" value="edit" action={{url_for('tanzimprofile')}} ></form>
+{% endblock %}
+
+</html>

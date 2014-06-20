@@ -1,0 +1,47 @@
+﻿<!doctype html>
+<html>
+<head>
+<title>sign up</title>
+  <style type="text/css">
+    p{font-family:arial; font-size:50pt; font-style:italic; text-align:center;}
+    body{ background-image:url("01.jpg"); background-repeat:no-repeat; background-attachment:scroll;}
+  </style>
+</head>
+<body background="01.jpg">
+ <p><marquee style="color:yellow;" behaivior="alternative" loop="infinit" width="400" height="100">     Tinder</marquee></p> 
+ <div align="center">
+  <form action="{{url_for('signup')}}" method="post">
+    <table border="0" style="margin-top:20px; border-color:white border-style:ridge;">
+      <tr>
+       <td>username:</td>
+       <td><input type="text" name="username" size="20" maxlength="30"></td>
+      </tr>
+      <tr>
+       <td>password:</td>
+       <td><input type="password" name="password" size="20" maxlength="10" ></td>
+      </tr>
+      <tr>
+       <td>confirm your password</td>
+       <td><input type="password" name="a-password" size="20" maxlength="10" > </td> 
+      </tr>
+      <tr>
+       <td>mail:</td>
+       <td><input type="text" name="mail" size="20" maxlength="40" ></td>  
+      </tr>
+      <tr>
+      <td> birthday:
+	
+       year:<input type="text" name="year" size="5" maxlength="5" >month:<input type="text" name="month" size="5" maxlength="2" ></td>
+        <td> day:<input type="text" name="day" size="5" maxlength="2" ></td>
+       </tr>
+      <tr>
+       <td colspan="2"  align="center" ><input type="submit" value="send" name="send" >
+       <input type="reset" value="reset" name="reset" ></td>
+      </tr>
+        
+    
+    </table>
+   </form>
+ </div>
+</body>
+</html>

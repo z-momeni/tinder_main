@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+Design by http://www.bluewebtemplates.com
+Released for free under a Creative Commons Attribution 3.0 License
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Tinder</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+<!-- CuFon: Enables smooth pretty custom font rendering. 100% SEO friendly. To disable, remove this section -->
+<script type="text/javascript" src="js/cufon-yui.js"></script>
+<script type="text/javascript" src="js/arial.js"></script>
+<script type="text/javascript" src="js/cuf_run.js"></script>
+<!-- CuFon ends -->
+</head>
+<body>
+<div class="main">
+
+  <div class="header">
+    <div class="header_resize">
+      <div class="logo"><h1><a href="home.html"><span>tinder</span></a></h1></div>
+      <div class="clr"></div>
+      <div class="menu_nav">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="mydiary.html">My Diary</a></li>
+            <li><a href="writing memoir.html">Writing Memoir</a></li>
+            <li><a href="friends.html">Friends</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li class="active"><a href="settings.html">Settings</a></li>
+            <li><a href="about us.html">About Us</a></li>
+            <li><a href="">Sign Out</a></li>
+        </ul>
+      </div>
+      <div class="searchform">
+        <form id="search" name="search" method="post" action="">
+          <input name="button_search" src="/static/img/search_btn.gif" class="button_search" type="image" />
+          <span><input name="search" class="editbox_search" id="editbox_search" maxlength="80" value="Search" type="text" /></span>
+          <div class="clr"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+        <div class="article">
+          <h2><span>edit profile</span></h2><div class="clr"></div>
+            <form action="{{url_for('tanzimprofile')}}" method="post" class="edtform" >
+                <img src="static\img\o1.jpg" alt="yourprofile" height="50" width="50" >
+
+                <table align="center"  >
+
+                    <tr>
+                        <td><form action="{{url_for('tanzimprofile')}}" method="post">
+
+                            <input type="file" name="file" multiple value="choose file" placeholder="choose image" class="testbutton"><!--for upload image-->
+                            <!--<input type="submit" value="ok" name="ok" class="testbutton">-->
+                        </td>
+                    <tr>
+                    <tr >
+                        <td><p>about you</p></td>
+
+                    </tr>
+                    <td colspan="2"><hr></td>
+                    <tr >
+                        <td>Firstname:</td>
+
+                        <td><input type="text" name="firstname" size="20" maxlength="30"></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Lastname:</td>
+
+                        <td><input type="text" name="lastname" size="20" maxlength="30" ></td>
+                    </tr>
+                    <tr>
+                        <td>Age:</td>
+                        <td><input type="text" name="age" size="4" maxlength="4" > </td>
+                    </tr>
+                    <tr>
+                        <td>Gender:</td>
+                        <td>Male<input type= "radio" name="male" value="male"><br>
+                            Female<input type="radio" name="male" value="female"  ></td>
+                    </tr>
+                    <tr>
+                        <td>Mail:</td>
+                        <td><input type="text" name="mail" size="20" maxlength="40" ></td>
+                    </tr>
+                    <tr>
+                        <td>Country:</td>
+
+                        <td><input type="text" name="country" size="20" maxlength="30" ></td>
+                    </tr>
+                    <td colspan="2"><hr></td>
+                    <tr>
+                        <td colspan="2"><p>work and education</p></td>
+                    </tr>
+                    <tr>
+                        <td>Education:</td>
+                        <td><input type="text" name="education" size="20" maxlength="30" ></td>
+                    </tr>
+                    <tr>
+                        <td>Work:</td>
+                        <td><input type="text" name="work" size="20" maxlength="30" placeholder="where have you work?" ></td>
+                    </tr>
+                    <tr>
+                        <td>College:</td>
+                        <td><input type="text" name="college" size="25" maxlength="30" placeholder="where did you go to college?" ></td>
+                    </tr>
+                    <tr>
+                        <td>School:</td>
+                        <td><input type="text" name="school" size="25" maxlength="30" placeholder="where did you go to school?" ></td>
+                    </tr>
+                    <td colspan="2"><hr></td>
+                    <tr>
+                        <td>Biography:</td><br><br>
+                        <td><textarea rows="5" cols="50" name="biography" style="margin-top:84px;" 		  				 			placeholder="axplain about yourself to your friends can know you"></textarea><br>
+
+
+                            <input type="submit" value="send" class="testbutton" name="send">
+
+
+                            <input type="reset" value="reset" class="testbutton" name="reset"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+      </div>
+      <div class="sidebar">
+        <div class="gadget">
+          <h2 class="star"><span>Sidebar</span> Menu</h2><div class="clr"></div>
+          <ul class="sb_menu">
+              <li><a href="home.html">Home</a></li>
+              <li><a href="mydiary.html">My Diary</a></li>
+              <li><a href="writing memoir.html">Writing Memoir</a></li>
+              <li><a href="friends.html">Friends</a></li>
+              <li><a href="profile.html">Profile</a></li>
+              <li class="active"><a href="settings.html">Settings</a></li>
+              <li><a href="about us.html">About Us</a></li>
+          </ul>
+        </div>
+        <div class="gadget">
+          <h2 class="star"><span>Sponsors</span></h2><div class="clr"></div>
+          <ul class="ex_menu">
+            <li><a href="http://www.dreamtemplate.com" title="Website Templates">DreamTemplate</a><br />Over 6,000+ Premium Web Templates</li>
+            <li><a href="http://www.templatesold.com" title="WordPress Themes">TemplateSOLD</a><br />Premium WordPress &amp; Joomla Themes</li>
+            <li><a href="http://www.imhosted.com" title="Affordable Hosting">ImHosted.com</a><br />Affordable Web Hosting Provider</li>
+            <li><a href="http://www.dreamstock.com" title="Stock Photos">DreamStock</a><br />Download Amazing Stock Photos</li>
+            <li><a href="http://www.evrsoft.com" title="Website Builder">Evrsoft</a><br />Website Builder Software &amp; Tools</li>
+            <li><a href="http://www.myvectorstore.com" title="Stock Icons">MyVectorStore</a><br />Royalty Free Stock Icons</li>
+          </ul>
+        </div>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+
+  <div class="fbg">
+    <div class="fbg_resize">
+      <div class="col c1">
+        <h2><span>Image Gallery</span></h2>
+        <a href="#"><img src="/static/img/pic1.jpg" width="56" height="56" alt="pix" /></a>
+        <a href="#"><img src="/static/img/pic2.jpg" width="56" height="56" alt="pix" /></a>
+        <a href="#"><img src="/static/img/pic3.jpg" width="56" height="56" alt="pix" /></a>
+        <a href="#"><img src="/static/img/pic4.jpg" width="56" height="56" alt="pix" /></a>
+        <a href="#"><img src="/static/img/pic5.jpg" width="56" height="56" alt="pix" /></a>
+        <a href="#"><img src="/static/img/pic6.jpg" width="56" height="56" alt="pix" /></a>
+      </div>
+      <div class="col c2">
+        <h2><span>Lorem Ipsum</span></h2>
+        <p>Lorem ipsum dolor<br />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. <a href="#">Morbi tincidunt, orci ac convallis aliquam</a>, lectus turpis varius lorem, eu posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum, dui pede condimentum odio, ac blandit ante orci ut diam.</p>
+      </div>
+      <div class="col c3">
+        <h2><span>About</span></h2>
+        <img src="/static/img/white.jpg" width="56" height="56" alt="pix" />
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo. llorem, eu posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum. <a href="#">Learn more...</a></p>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer_resize">
+      <p class="lf">&copy; Copyright MyWebSite. Designed by Blue <a href="http://www.bluewebtemplates.com">Website Templates</a></p>
+      <ul class="fmenu">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="mydiary.html">My Diary</a></li>
+          <li><a href="writing memoir.html">Writing Memoir</a></li>
+          <li><a href="friends.html">Friends</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li class="active"><a href="settings.html">Settings</a></li>
+          <li><a href="about us.html">About Us</a></li>
+      </ul>
+      <div class="clr"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
