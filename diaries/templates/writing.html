@@ -1,0 +1,373 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+Design by http://www.bluewebtemplates.com
+Released for free under a Creative Commons Attribution 3.0 License
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>writing memoir</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css" />
+    <!--<link href="/static/css/stylecalender.css" rel="stylesheet" type="text/css" />-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Monda:400,700' rel='stylesheet' type='text/css'>
+
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/easyResponsiveTabs.js"></script>
+
+    <!----Calender -------->
+   <!-- <link rel="stylesheet" href="/static/css/clndr.css" type="text/css" />
+    <script src="/static/js/underscore-min.js"></script>
+    <script src= "/static/js/moment-2.2.1.js"></script>
+    <script src="/static/js/clndr.js"></script>
+    <script src="/static/js/site.js"></script>
+    <!----End Calender -------->
+<link href="/static/css/style.css" rel="stylesheet" type="text/css" />
+<!-- CuFon: Enables smooth pretty custom font rendering. 100% SEO friendly. To disable, remove this section -->
+<script type="text/javascript" src="/static/js/cufon-yui.js"></script>
+<script type="text/javascript" src="/static/js/arial.js"></script>
+<script type="text/javascript" src="/static/js/cuf_run.js"></script>
+<!-- CuFon ends -->
+</head>
+<body>
+<div class="main">
+
+  <div class="header">
+    <div class="header_resize">
+      <div class="logo"><h1><a href="{{url_for('home')}}"><span>diaries</span></a></h1></div>
+      <div class="clr"></div>
+      <div class="menu_nav" style="margin-top:2%;">
+        <ul>
+            <li><a href="{{url_for('home')}}">Home</a></li>
+            <li><a href="{{url_for('mydiary')}}">My Diary</a></li>
+            <li><a href="{{url_for('public_user')}}" name= "amenupublic">Public page</a></li>
+            <li class="active"><a href="{{url_for('writing')}}">Writing Memoir</a></li>
+           <!-- <li><a href="{{url_for('friends')}}">Friends</a></li>-->
+            <li><a href="{{url_for('profile')}}">Profile</a></li>
+            <li><a href="{{url_for('settings')}}">Settings</a></li>
+            <!--<li><a href="{{url_for('welcome')}}">About Us</a></li>-->
+            <li><a href="{{url_for('main')}}">Sign Out</a></li>
+        </ul>
+      </div>
+      <div class="searchform">
+        <form id="search" name="search" method="post" action="{{url_for('home')}}" value="search">
+          <input name="submitsearch" src="/static/img/search_btn.gif" type="submit" class="testbutton" value="search" />
+          <span><input name="txtsearch" class="editbox_search" id="editbox_search" maxlength="80"  placeholder="search" type="text" /></span>
+          <div class="clr"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+        <div class="article">
+         <!--   <textarea rows="1" cols="10" name="title" placeholder="title" ></textarea>-->
+            <br>
+
+
+<form method="post" action = "{{url_for('writing')}}" name = "writing" enctype="multipart/form-data">
+            <textarea name="text" rows="30" cols="50" id="textareakeyborrd"></textarea>
+            <div  align="center"class="buttons" dir="rtl">
+                <input type="button" value="0" onclick="keys('0')">
+                <input type="button" value="9" onclick="keys('9')">
+                <input type="button" value="8" onclick="keys('8')">
+                <input type="button" value="7" onclick="keys('7')">
+                <input type="button" value="6" onclick="keys('6')">
+                <input type="button" value="5" onclick="keys('5')">
+                <input type="button" value="4" onclick="keys('4')">
+                <input type="button" value="3" onclick="keys('3')">
+                <input type="button" value="2" onclick="keys('2')">
+                <input type="button" value="1" onclick="keys('1')">
+
+                <br>
+
+                <input type="button" value="چ" onclick="keys('چ')">
+                <input type="button" value="ج" onclick="keys('ج')">
+                <input type="button" value="ح" onclick="keys('ح')">
+                <input type="button" value="خ" onclick="keys('خ')">
+                <input type="button" value="ه" onclick="keys('ه')">
+                <input type="button" value="ع" onclick="keys('ع')">
+                <input type="button" value="غ" onclick="keys('غ')">
+                <input type="button" value="ف" onclick="keys('ف')">
+                <input type="button" value="ق" onclick="keys('ق')">
+                <input type="button" value="ث" onclick="keys('ث')">
+                <input type="button" value="ص" onclick="keys('ص')">
+                <input type="button" value="ض" onclick="keys('ض')">
+
+                <br>
+
+                <input type="button" value="گ" onclick="keys('گ')">
+                <input type="button" value="ک" onclick="keys('ک')">
+                <input type="button" value="م" onclick="keys('م')">
+                <input type="button" value="ن" onclick="keys('ن')">
+                <input type="button" value="ت" onclick="keys('ت')">
+                <input type="button" value="ا" onclick="keys('ا')">
+                <input type="button" value="ل" onclick="keys('ل')">
+                <input type="button" value="ب" onclick="keys('ب')">
+                <input type="button" value="ی" onclick="keys('ی')">
+                <input type="button" value="س" onclick="keys('س')">
+                <input type="button" value="ش" onclick="keys('ش')">
+
+                <br>
+
+                <input type="button" value="/" onclick="keys('/')">
+                <input type="button" value="." onclick="keys('.')">
+                <input type="button" value="و" onclick="keys('و')">
+                <input type="button" value="ئ" onclick="keys('ئ')">
+                <input type="button" value="د" onclick="keys('د')">
+                <input type="button" value="ذ" onclick="keys('ذ')">
+                <input type="button" value="ر" onclick="keys('ر')">
+                <input type="button" value="ز" onclick="keys('ز')">
+                <input type="button" value="ط" onclick="keys('ط')">
+                <input type="button" value="ظ" onclick="keys('ظ')">
+
+                <br>
+
+                <input type="button" value="خط بعد" onclick="keys('n')">
+                <input type="button" value="                                                       " onclick="keys(' ')">
+            </div>
+	    <script type="text/javascript">
+                function keys(key){document.getElementById('textareakeyborrd').value+=key;}
+            </script>
+            <style type="text/css">
+                #textareakeyborrd{width:300px;height:150px;font:11px Tahoma;direction:rtl;text-align:right;}
+                .buttons input{font:11px Tahoma;}
+            </style>
+
+            <input type="file" name="file" multiple value="choose file" placeholder="choose image" class="testbutton"><!--for upload image-->
+
+            
+
+            
+            
+           <!--private <input type="checkbox" value="private" name="private" class="testbutton" checked><br>
+            public<input type="checkbox" value="public" name="public" class="testbutton" ><br>
+            friends<input type="checkbox" value="friends" name="friends" class="testbutton" ><br>-->
+
+            <select name="privacy" class="testbutton">
+                <option value="private" onClick="" selected="private" >private</option>
+                <option value="friends" onClick="">friends</option>
+                <option value="public"  onClick="">public</option>
+   </select>
+<br>
+            <input  type="text" name="year" placeholder="year" size="2" maxlength="4" >
+            <input  type="text" name="month" placeholder="month" size="2" maxlength="2" >
+            <input  type="text" name="day" placeholder="day" size="2" maxlength="2">
+            <input  type="text" name="title" placeholder="title" size="6" maxlength="20" >
+
+           <!-- <input type="submit" value="tag" name="tag" class="testbutton" href="{{url_for('writing')}}">-->
+          <!--  <button value="tag" name="tag" onClick="" class="testbutton">tag</button>-->
+<!--	{% if friend %}
+		{% for i in friend %}
+            <input  type="text" name="t1" placeholder="t1" size="2" maxlength="4" >
+		{% endfor %}
+	{% endif %}-->
+            <br>
+
+            <input type="submit" value="save" name="save" class="testbutton" href="{{url_for('home')}}">
+            <input type="reset" value="cancel" name="cancel" class="testbutton">
+
+            </form>
+          <ul class="sb_menu">
+            <li><a href="#"><strong>Lorem ipsum</strong></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="gadget">
+          <h2 class="star"><span>Sidebar</span> Menu</h2><div class="clr"></div>
+          <ul class="sb_menu">
+             <li><a href="{{url_for('home')}}">Home</a></li>
+            <li><a href="{{url_for('mydiary')}}">My Diary</a></li>
+            <li><a href="{{url_for('public_user')}}" name= "amenupublic">Public page</a></li>
+            <li class="active"><a href="{{url_for('writing')}}">Writing Memoir</a></li>
+              <li><a href="{{url_for('friends')}}">who can see your posts?</a></li>
+              <li><a href="{{url_for('followers')}}">people you can see their posts </a></li>
+            <li><a href="{{url_for('profile')}}">Profile</a></li>
+            <li><a href="{{url_for('settings')}}">Settings</a></li>
+            <li><a href="{{url_for('welcome')}}">About Us</a></li>
+          </ul>
+        </div>
+        <div class="gadget">
+            <h2 class="star"><span>links</span></h2><div class="clr"></div>
+            <ul class="ex_menu">
+                <li><a href="http://www.google.com" >google</a><br />for best searching</li>
+                <li><a href="http://www.facebook.com">facebook</a><br />most </li>popular social network
+                <li><a href="http://www.twitter.com">twitter</a><br />social network</li>
+                <li><a href="http://www.linkedIn.com" >linkedIn</a>popular links<br /></li>
+                <li><a href="http://www.youtube.com" >youtube</a><br />a site for music and videos and films</li>
+                <li><a href="http://www.stackoverflow.com" >stackoverflow</a><br />for answering your questions</li>
+            </ul>
+        </div>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+
+  <div class="fbg">
+    <div class="fbg_resize">
+      <div class="col c1">
+        <h2><span>Image Gallery</span></h2>
+        <a href="#"><img src="/static/img/pic1.jpg" width="56" height="56" alt="pix" /></a>
+        <a href="#"><img src="/static/img/pic2.jpg" width="56" height="56" alt="pix" /></a>
+        <a href="#"><img src="/static/img/pic3.jpg" width="56" height="56" alt="pix" /></a>
+        <a href="#"><img src="/static/img/pic4.jpg" width="56" height="56" alt="pix" /></a>
+        <a href="#"><img src="/static/img/pic5.jpg" width="56" height="56" alt="pix" /></a>
+        <a href="#"><img src="/static/img/pic6.jpg" width="56" height="56" alt="pix" /></a>
+      </div>
+      <div class="col c2">
+
+          <div class="wrap">
+              <div class="span_of_3"><!-- start span_of_3 -->
+
+
+                  <div class="span3_of_3 left"><!-- start span3_of_3 -->
+                     
+                      <!----start-accordinatio-files--->
+
+                      <!----start-accordinatio-files--->
+			<script language="javascript" type="text/javascript">
+    
+    monthnames = new Array(
+            "January",
+            "Februrary",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "Decemeber");
+    var linkcount=0;
+    function addlink(month, day, href) {
+        var entry = new Array(3);
+        entry[0] = month;
+        entry[1] = day;
+        entry[2] = href;
+        this[linkcount++] = entry;
+    }
+    Array.prototype.addlink = addlink;
+    linkdays = new Array();
+    monthdays = new Array(12);
+    monthdays[0]=31;
+    monthdays[1]=28;
+    monthdays[2]=31;
+    monthdays[3]=30;
+    monthdays[4]=31;
+    monthdays[5]=30;
+    monthdays[6]=31;
+    monthdays[7]=31;
+    monthdays[8]=30;
+    monthdays[9]=31;
+    monthdays[10]=30;
+    monthdays[11]=31;
+    todayDate=new Date();
+    thisday=todayDate.getDay();
+    thismonth=todayDate.getMonth();
+    thisdate=todayDate.getDate();
+    thisyear=todayDate.getYear();
+    thisyear = thisyear % 100;
+    thisyear = ((thisyear < 50) ? (2000 + thisyear) : (1900 + thisyear));
+    if (((thisyear % 4 == 0)
+            && !(thisyear % 100 == 0))
+            ||(thisyear % 400 == 0)) monthdays[1]++;
+    startspaces=thisdate;
+    while (startspaces > 7) startspaces-=7;
+    startspaces = thisday - startspaces + 1;
+    if (startspaces < 0) startspaces+=7;
+    document.write("<table border=2 bgcolor=#00000; ");
+    document.write("bordercolor=black>");
+    document.write("<tr><td colspan=7 style='font-size:13px'><center>"
+            + monthnames[thismonth] + " " + thisyear
+            + "</center></td></tr>");
+    document.write("<tr style='font-size:11px'>");
+    document.write("<td align=center>Su</td>");
+    document.write("<td align=center>M</td>");
+    document.write("<td align=center>Tu</td>");
+    document.write("<td align=center>W</td>");
+    document.write("<td align=center>Th</td>");
+    document.write("<td align=center>F</td>");
+    document.write("<td align=center>Sa</td>");
+    document.write("</tr>");
+    document.write("<tr style='font-size:11px'>");
+    for (s=0;s<startspaces;s++) {
+        document.write("<td> </td>");
+    }
+    count=1;
+    while (count <= monthdays[thismonth]) {
+        for (b = startspaces;b<7;b++) {
+            linktrue=false;
+            document.write("<td>");
+            for (c=0;c<linkdays.length;c++) {
+                if (linkdays[c] != null) {
+                    if ((linkdays[c][0]==thismonth + 1) && (linkdays[c][1]==count)) {
+                        document.write("<a href=\"" + linkdays[c][2] + "\">");
+                        linktrue=true;
+                    }
+                }
+            }
+            if (count==thisdate) {
+                document.write("<font face='arial' size='-1' color='cc0000'><strong>");
+            }
+            if (count <= monthdays[thismonth]) {
+                document.write(count);
+            }
+            else {
+                document.write(" ");
+            }
+            if (count==thisdate) {
+                document.write("</strong></font>");
+            }
+            if (linktrue)
+                document.write("</a>");
+            document.write("</td>");
+            count++;
+        }
+        document.write("</tr>");
+        document.write("<tr style='font-size:11px'>");
+        startspaces=0;
+    }
+    document.write("</table></p>");
+   
+</script>
+
+                  </div>
+
+
+              </div><!-- end span_of_3 -->
+          </div>
+        </div>
+      <div class="col c3">
+        <h2><span>About</span></h2>
+        <img src="/static/img/white.jpg" width="56" height="56" alt="pix" />
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo. llorem, eu posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum. <a href="#">Learn more...</a></p>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer_resize">
+      <p class="lf">&copy; Copyright MyWebSite. Designed by Blue <a href="http://www.bluewebtemplates.com">Website Templates</a></p>
+      <ul class="fmenu">
+          <li><a href="{{url_for('home')}}">Home</a></li>
+            <li><a href="{{url_for('mydiary')}}">My Diary</a></li>
+            <li><a href="{{url_for('public_user')}}" name= "amenupublic">Public page</a></li>
+            <li class="active"><a href="{{url_for('writing')}}">Writing Memoir</a></li>
+            <li><a href="{{url_for('friends')}}">Friends</a></li>
+            <li><a href="{{url_for('profile')}}">Profile</a></li>
+            <li><a href="{{url_for('settings')}}">Settings</a></li>
+            <li><a href="{{url_for('welcome')}}">About Us</a></li>
+      </ul>
+      <div class="clr"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
