@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<div id="friends" name="friends" >
+{% if friends %}
+{%block body%}
+{% for friend  in friends %}
+
+<div class="image" id="dfriends"><p id="friendname"> <img src={{friend.images}} height="50" width="60" >
+
+   {{friend.firstname}} {{friend.lastname}}</p></div>
+</div>
+
+{% endfor %}
+{% endblock %}
+{% endif%}
+
+<hr>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+Design by http://www.bluewebtemplates.com
+Released for free under a Creative Commons Attribution 3.0 License
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Tinder</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css" />
+    <!-- CuFon: Enables smooth pretty custom font rendering. 100% SEO friendly. To disable, remove this section -->
+    <!-- bootstrap -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<!-- CuFon: Enables smooth pretty custom font rendering. 100% SEO friendly. To disable, remove this section -->
+<script type="text/javascript" src="/static/js/cufon-yui.js"></script>
+<script type="text/javascript" src="/static/js/arial.js"></script>
+<script type="text/javascript" src="/static/js/cuf_run.js"></script>
+    <style type="text/css">
+        .testbutton {
+
+            border:1px solid #cacaca; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px;font-size:12px;font-family:arial, helvetica, sans-serif; padding: 10px 10px 10px 10px; text-decoration:none; display:inline-block;text-shadow: -1px -1px 0 rgba(0,0,0,0.3);font-weight:bold; color: #FFFFFF;
+            background-color: #E6E6E6; background-image: -webkit-gradient(linear, left top, left bottom, from(#E6E6E6), to(#CCCCCC));
+            background-image: -webkit-linear-gradient(top, #E6E6E6, #CCCCCC);
+            background-image: -moz-linear-gradient(top, #E6E6E6, #CCCCCC);
+            background-image: -ms-linear-gradient(top, #E6E6E6, #CCCCCC);
+            background-image: -o-linear-gradient(top, #E6E6E6, #CCCCCC);
+            background-image: linear-gradient(to bottom, #E6E6E6, #CCCCCC);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#E6E6E6, endColorstr=#CCCCCC);
+
+        }
+        .testbutton:hover {
+            color: #14396A !important;
+            background: #468CCF;
+            background: linear-gradient(top,  #e6810b,  #ff4500);
+            background: -ms-linear-gradient(top,  #e6810b,  #ff4500);
+            background: -webkit-gradient(linear, left top, left bottom, from(#e6810b), to(#ff4500));
+            background: -moz-linear-gradient(top,  #e6810b,  #ff4500);
+        }
+
+    </style>
+<!-- CuFon ends -->
+</head>
+<body>
+<div class="main">
+
+  <div class="header">
+    <div class="header_resize">
+      <div class="logo"><h1><a href="{{url_for('home')}}"><span>tinder</span></a></h1></div>
+      <div class="clr"></div>
+      <div class="menu_nav">
+        <ul>
+            <li><a href="{{url_for('home')}}">Home</a></li>
+            <li><a href="{{url_for('mydiary')}}">My Diary</a></li>
+            <li><a href="{{url_for('public_user')}}" name= "amenupublic">Public page</a></li>
+            <li><a href="{{url_for('writing')}}">Writing Memoir</a></li>
+            <li><a href="{{url_for('friends')}}">Friends</a></li>
+            <li><a href="{{url_for('profile')}}">Profile</a></li>
+            <li class="active"><a href="{{url_for('settings')}}">Settings</a></li>
+            <!--<li><a href="{{url_for('welcome')}}">About Us</a></li>-->
+            <li><a href="{{url_for('main')}}">Sign Out</a></li>
+        </ul>
+      </div>
+      <div class="searchform">
+        <form id="search" name="search" method="post" action="{{url_for('home')}}" value="search">
+          <input name="submitsearch" src="/static/img/search_btn.gif" class="button_search" type="submit" value="search" />
+          <span><input name="txtsearch" class="editbox_search" id="editbox_search" maxlength="80"  placeholder="search" type="text" /></span>
+          <div class="clr"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+        <div class="article">
+            <!-- Nav tabs -->
+            <div id="outer" style="margin-top: 10%;">
+                <ul class="nav nav-tabs">
+                    <li><a href="{{url_for('settings')}}" data-toggle="tab">about you</a></li>
+                    <li><a href="{{url_for('password')}}" data-toggle="tab">change password</a></li>
+                    <li class="active" ><a href="{{url_for('work')}}" data-toggle="tab">work and education</a></li>
+
+                </ul>
+            </div>
+            <!-- Tab panes -->
+
+
+                <div class="tab-pane" id="messages">
+                    <form action="{{url_for('work')}}" method="post" >
+                    <table align="center" style="font-family: arial;">
+
+                        <td style="padding: 10px;">Education:</td>
+			{% if education %}
+                        <td><input type="text" name="education" value={{education}} size="20" maxlength="30" ></td>
+			{% endif %}
+                        </tr>
+                        <tr>
+
+                            <td style="padding: 10px;">Work:</td>
+
+			{% if work %}
+                            <td><input type="text" name="work" size="20" maxlength="30" value={{work}} ></td>
+			{% endif%}
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px;">College:</td>
+			{% if college %}
+                            <td><input type="text" name="college" size="25" maxlength="30" value={{college}}></td>
+			{% endif %}
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px;">School:</td>
+			{% if school %}
+                            <td><input type="text" name="school" size="25" maxlength="30" value={{school}} ></td>
+			{% endif %}
+                        </tr>
+                        <tr>
+                            <td colspan="2"  align="center">
+                               <input type="submit" value="send" class="testbutton" name="send" href={{url_for('profile')}}>
+                               <input type="reset" value="reset" class="testbutton" name="reset" href={{url_for('work')}} ></td>
+                        </tr>
+                    </table>
+                    </form>
+                </div>
+</div>
+                <div class="tab-pane" id="settings">...</div>
+            </div>
+
+        </div>
+      </div>
+        </div>
+
+      <div class="sidebar">
+        <div class="gadget">
+<div align="left">
+          <h2 class="star"><span>Sidebar</span> Menu</h2><div class="clr"></div>
+          <ul class="sb_menu">
+             <li><a href="{{url_for('home')}}">Home</a></li>
+            <li><a href="{{url_for('mydiary')}}">My Diary</a></li>
+            <li><a href="{{url_for('public_user')}}" name= "amenupublic">Public page</a></li>
+            <li><a href="{{url_for('writing')}}">Writing Memoir</a></li>
+            <li><a href="{{url_for('friends')}}">Friends</a></li>
+            <li><a href="{{url_for('profile')}}">Profile</a></li>
+            <li class="active"><a href="{{url_for('settings')}}">Settings</a></li>
+            
+          </ul>
+        </div>
+
+        <div class="gadget">
+          <h2 class="star"><span>Sponsors</span></h2><div class="clr"></div>
+          <ul class="ex_menu">
+            <li><a href="http://www.dreamtemplate.com" title="Website Templates">DreamTemplate</a><br />Over 6,000+ Premium Web Templates</li>
+            <li><a href="http://www.templatesold.com" title="WordPress Themes">TemplateSOLD</a><br />Premium WordPress &amp; Joomla Themes</li>
+            <li><a href="http://www.imhosted.com" title="Affordable Hosting">ImHosted.com</a><br />Affordable Web Hosting Provider</li>
+            <li><a href="http://www.dreamstock.com" title="Stock Photos">DreamStock</a><br />Download Amazing Stock Photos</li>
+            <li><a href="http://www.evrsoft.com" title="Website Builder">Evrsoft</a><br />Website Builder Software &amp; Tools</li>
+            <li><a href="http://www.myvectorstore.com" title="Stock Icons">MyVectorStore</a><br />Royalty Free Stock Icons</li>
+          </ul>
+        </div>
+      </div>
+</div>
+</div>
+      <div class="clr"></div>
+    </div>
+  </div>
+
+  <div class="fbg">
+    <div class="fbg_resize">
+      <div class="col c1">
+        <h2><span>Image Gallery</span></h2>
+        <a href="#"><img src="/static/img/pic1.jpg" width="56" height="56" alt="pix" /></a>
+        <a href="#"><img src="/static/img/pic2.jpg" width="56" height="56" alt="pix" /></a>
+        <a href="#"><img src="/static/img/pic3.jpg" width="56" height="56" alt="pix" /></a>
+        <a href="#"><img src="/static/img/pic4.jpg" width="56" height="56" alt="pix" /></a>
+        <a href="#"><img src="/static/img/pic5.jpg" width="56" height="56" alt="pix" /></a>
+        <a href="#"><img src="/static/img/pic6.jpg" width="56" height="56" alt="pix" /></a>
+      </div>
+      <div class="col c2">
+        <h2><span>Lorem Ipsum</span></h2>
+        <p>Lorem ipsum dolor<br />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. <a href="#">Morbi tincidunt, orci ac convallis aliquam</a>, lectus turpis varius lorem, eu posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum, dui pede condimentum odio, ac blandit ante orci ut diam.</p>
+      </div>
+      <div class="col c3">
+        <h2><span>About</span></h2>
+        <img src="/static/img/white.jpg" width="56" height="56" alt="pix" />
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo. llorem, eu posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum. <a href="#">Learn more...</a></p>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer_resize">
+      <p class="lf">&copy; Copyright MyWebSite. Designed by Blue <a href="http://www.bluewebtemplates.com">Website Templates</a></p>
+      <ul class="fmenu">
+          <li><a href="{{url_for('home')}}">Home</a></li>
+            <li><a href="{{url_for('mydiary')}}">My Diary</a></li>
+            <li><a href="{{url_for('public_user')}}" name= "amenupublic">Public page</a></li>
+            <li><a href="{{url_for('writing')}}">Writing Memoir</a></li>
+            <li><a href="{{url_for('friends')}}">Friends</a></li>
+            <li><a href="{{url_for('profile')}}">Profile</a></li>
+            <li class="active"><a href="{{url_for('settings')}}">Settings</a></li>
+            <li><a href="{{url_for('welcome')}}">About Us</a></li>
+      </ul>
+      <div class="clr"></div>
+    </div>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>

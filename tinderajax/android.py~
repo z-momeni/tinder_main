@@ -1,0 +1,184 @@
+import flask, flask.views
+import os
+from flask.ext.mail import Mail, Message
+#from flask_mail import Message,Mail
+import functools
+from neo4jrestclient.client import GraphDatabase
+from neo4jrestclient.query import Q
+from flask import Flask, render_template, request, redirect, url_for, send_from_directory, jsonify
+from werkzeug import secure_filename
+from flask_cors import cross_origin
+
+#************************************************************************
+import uuid   				#inja ye chizi import kardam                                 #************************************************************************
+							
+#import flask_sijax
+app = flask.Flask(__name__)
+app.config.from_object(__name__)
+mail = Mail(app)
+
+app.secret_key = "1234"
+
+gdb = GraphDatabase("http://localhost:7474/db/data/")
+
+people = gdb.labels.create("People")		#label of user 
+diaries = gdb.labels.create("Diaries")		#label of khaterat
+wrote = gdb.labels.create("Wrote")		#label of relation between user and khaterat
+friend = gdb.labels.create("Friend")		#label of relation between user and her friend
+fdiaries = gdb.labels.create("Fdiaries")	#label of frien diaries
+fridiaries = gdb.labels.create("Fridiaries")	#label of relation between user and friend diaries
+
+app.config['UPLOAD_FOLDER'] = '/home/zahra/tinder/test/tinder/static/img/media'
+app.config['ALLOWED_EXTENSIONS'] = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
+
+DEBUG = True
+SECRET_KEY = 'hidden'
+USERNAME = 'secret'
+PASSWORD = 'secret'
+
+MAIL_SERVER='imap.gmail.com'
+MAIL_PORT=993
+MAIL_USE_TLS = False
+MAIL_USE_SSL= True
+MAIL_USERNAME = 'happysnake.2014@gmail.com'
+MAIL_PASSWORD = 'wormgame'
+
+mail = Mail(app)
+#app.config["MAIL_SERVER"] = "smtp.gmail.com"
+#app.config["MAIL_PORT"] = 465
+#app.config["MAIL_USE_SSL"] = True
+#app.config["MAIL_USERNAME"] = 'happysnake.2014@gmail.com'
+#app.config["MAIL_PASSWORD"] = 'wormgame'
+
+class Main(flask.views.MethodView):
+    def get(self):
+        return flask.render_template('main.html')
+    
+    def post(self):
+	if 'signin' in flask.request.form:
+		return flask.redirect(flask.url_for('signin'))
+	if 'signup' in flask.request.form:
+		return flask.redirect(flask.url_for('signup'))
+
+
+#****************************************signin******************************************
+
+@cross_origin()
+class signin(flask.views.MethodView):
+    def get(self):
+
+        return flask.render_template('signin.html')
+    
+    def post(self):
+
+	tok = dict()
+	a= uuid.uuid4()
+	user = request.args.get('user_name_text')
+        passwd = request.args.get('password_text')
+	#if 'log in' in flask.request.form:
+	q="""match (p:People { username : "%s"}) return p.password""" % user
+	result = gdb.query(q=q)
+	#if (len(result)==0):
+	#	print "your username is invalid!you must sign up."
+	#	flask.flash("your username is invalid!you must sign up.")
+        #	return flask.redirect(flask.url_for('signup'))
+
+	if (result[0][0]==passwd):
+		#flask.session['username'] = user
+		return jsonify({'success': True})
+        else:
+         	#flask.flash("your password is incorrect")
+		print "your password is incorrect"
+        	return jsonify({'success': False})
+
+
+#****************************************email******************************************
+
+def send_mail():
+    msg = Message(
+      'Hello',
+       sender='happysnake.2014@gmail.com',
+       recipients=
+       ['m.hajihosseini95@gmail.com'])
+    msg.body = "This is the email body"
+    mail.send(msg)
+    return "Sent"
+
+#****************************************signup******************************************
+
+@cross_origin()
+class signup(flask.views.MethodView):
+    def get(self):
+        return flask.render_template('signup.html')
+    
+    def post(self):
+	
+	#user = flask.request.form['username']   #inja bayad oon token haro gozasht
+	user = request.args.get('user_name')
+  
+	if(request.args.get['user_name']!="" and request.args.get['password']!="" and request.args.get['confirm_password']!="" and request.args.get['mail']!="" and request.args.get['birthday_year']!="" and request.args.get['birthday_month']!="" and request.args.get['birthday_day']!=""):
+
+			q="""match (p:People { username : "%s"}) return p.password""" % user
+			results = gdb.query(q=q) 
+			print "result",results,"len= ",len(results)
+			if len(results)!=0:
+
+				#flask.flash("your username is repetitive.please change your username")
+				print "your username is repetitive.please change your username"
+				return jsonify({'success': False})
+
+			elif len(str(flask.request.form['password']))<=5:
+
+				#flask.flash("your password must more than 5 character ! please change your password")
+				print "your password must more than 5 character ! please change your password"
+				return jsonify({'success': False})
+
+			elif flask.request.form['password']!=flask.request.form['a_password']:
+
+				#flask.flash("your password and confirm password is not equal ")
+				print "your password and confirm password is not equal"
+				return jsonify({'success': False})
+			
+			#elif (year<=0 or month<=0 or day<=0 or month>12 or day>31):
+				#print year ,month ,day
+			#	flask.flash("your birthday's date is invalid ")
+			#	print "your birthday's date is invalid"
+			#	return flask.redirect(flask.url_for('signup'))
+
+
+			else:
+				#flask.session['username'] = flask.request.form['username']     #***** in ja ba token
+
+				#msg = Message("welcom to tinder group!",sender="happysnake.2014@gmail.com.com",recipients=["m.hajihosseini95@gmail.com"])
+				#mail.send(msg)
+				print "wwwwwww"
+				print request.args.get['user_name']
+				print request.args.get['password']
+				print request.args.get['confirm_password']
+				print request.args.get['birthday_year']
+				print request.args.get['birthday_month']
+				print request.args.get['birthday_day']
+				print request.args.get['mail']
+
+				#q=""" create (s:People{username:"%s",password:"%s"}) """%(flask.request.form['username'],flask.request.form['password'])
+				
+				q=""" create (s:People{username:"%s",password:"%s",a_password:"%s",mail:"%s",year:"%s",month:"%s",day:"%s",firstname:"%s",lastname:"%s",age:"%s",gender:"%s",country:"%s",education:"%s",work:"%s",college:"%s",school:"%s",biography:"%s",imageaddress:"%s"}) """ %(request.args.get['user_name'],request.args.get['password'],request.args.get['confirm_password'],request.args.get['mail'],request.args.get['birthday_year'],request.args.get['birthday_month'],request.args.get['birthday_day'],"-","-","-","-","-","-","-","-","-","-","/static/img/media/profile.jpg")
+
+				result = gdb.query(q=q)
+				
+				
+				if os.path.exists('/home/zahra/tinder/test/tinder/static/img/media/'+str(request.args.get['user_name'])):
+    					pass
+				else:
+    					os.mkdir('/home/zahra/tinder/test/tinder/static/img/media/'+str(request.args.get['user_name']))
+				return jsonify({'success': True})
+		
+
+	else:			
+		#flask.flash("you must fill all the blanks!")
+		#return flask.redirect(flask.url_for('signup'))
+		print "you must fill all the blanks!"
+		return jsonify({'success': False})
+
+
+

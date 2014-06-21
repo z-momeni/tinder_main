@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<title>sign in</title>
+  <style type="text/css">
+    p{font-family:arial; font-size:50pt; font-style:italic; text-align:center;}
+    body{ background-image:url("01.jpg"); background-repeat:no-repeat; background-attachment:scroll;}
+  </style>
+</head>
+<body background="01.jpg">
+ <p><marquee style="color:yellow;" behaivior="alternative" loop="infinit" width="400" height="100">     Tinder</marquee></p> 
+ <div align="center">
+  <form action="{{url_for('signin')}}" method="post">
+    <table border="0" style="margin-top:20px; border-color:white border-style:ridge;">
+        <tr>
+        <td>username:</td>
+        <td><input type="text" name="username" size="20" maxlength="30"></td>
+        </tr>
+        <tr>
+        <td>password:</td>
+        <td><input type="password" name="password" size="20" maxlength="10" ></td>
+        </tr>
+        <tr>
+        <td>
+        <input type="checkbox" name="remember" value="signed in">Keep me signed in<br> 
+        </td>
+	</tr>
+	<tr>
+        <td>
+	<input type="checkbox" name="forget" value="forget">forget my password<br> 
+        </td>
+	</tr>
+        
+      </table>
+
+
+<input type="submit"  name="log in" value="log in">
+</form>
+</div>
+
+</body>
+
+</html>
+	

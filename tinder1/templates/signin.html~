@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<title>sign in</title>
+  <style type="text/css">
+    p{font-family:arial; font-size:50pt; font-style:italic; text-align:center;}
+    a{color:SandyBrown ; text-decoration:none; }
+    body{ background-image:url("01.jpg"); background-repeat:no-repeat; background-size:cover; background-attachment:scroll;}
+    form{color:SandyBrown;}
+p
+{
+color:Cornsilk ;
+position:relative;
+animation:mymove 5s infinite;
+animation-delay:-2s;
+animation-iteration-count:1;
+
+/*Safari and Chrome*/
+-webkit-animation:mymove 5s infinite;
+-webkit-animation-delay:-2s;
+-webkit-animation-iteration-count:1;
+}
+
+@keyframes mymove
+{
+from {left:-300px;}
+to {left:300px;}
+from {left:300px;}
+to {left:-300px;}
+}
+
+@-webkit-keyframes mymove /*Safari and Chrome*/
+{
+from {left:-300px;}
+to {left:300px;}
+from {left:300px;}
+to {left:-300px;}
+}
+  </style>
+</head>
+<body background="/static/img/01.jpg">
+ <div align="center">
+ <p>tinder</p>
+  <form action="{{url_for('signin')}}" method="post">
+    <table border="0" style="margin-top:20px; border-color:white border-style:ridge;">
+        <tr>
+        <td>username:</td>
+        <td><input type="text" name="username" size="20" maxlength="30"></td>
+        </tr>
+        <tr>
+        <td>password:</td>
+        <td><input type="password" name="password" size="20" maxlength="10" ></td>
+        </tr>
+        <tr>
+        <td>
+        <input type="checkbox" name="remember" value="signed in">Keep me signed in<br> 
+        </td>
+	</tr>
+	<tr>
+        <td>
+	<a href="url">forgot my password<br> 
+        </td>
+	</tr>
+        
+      </table>
+<input type="submit"  name="log in" value="log in">
+	
+  </form>
+
+</div>
+</body>
+</html>
+

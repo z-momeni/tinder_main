@@ -1,0 +1,127 @@
+﻿ <!doctype html>
+<html>
+<head> 
+<meta charset="utf-8">
+<title>editprofile</title>
+<link rel="stylesheet" href="static\css\style.css" type="text/css">
+</head>
+<body id="bd" name"bd">
+<div id="cssmenu">
+	<ul id="ulofmenubar" name="ulofmenubar" >
+
+    	<li id="limenuhome" name="limenuhome" class="active"> <a id="amenuhome" name="amenuhome" href="{{url_for('home')}}">home</a></li>
+
+	<li id="limenudiary" name="limenudiary"><a id="amenudiary" name="amenudiary" href="{{url_for('mydiary')}}" >mydiary</a></li>
+ 
+    	<li id="limenuprofile" name="limenuprofile"><a id="amenuprofile" name= "amenuprofile" href="{{url_for('profile')}}" >profile</a></li>
+
+        <li id="limenuabout" name="limenuabout"><a id="amenuabout" name= "amenuabout" href="{{url_for('welcome')}}" >about us</a></li>
+ 
+        <li id="limenudignout" name="limenusignout" class="last"><!--<button  id="btnmenusignout" name="btnmenusignout" value="sign out" type="button" onClick="fclose()" >sign out</button>--><a id="menusignout" name="btnmenusignout" href="{{url_for('main')}}">sign out</a></li>
+ 
+    	<li id="liarchive" name="liarchive"><a href="{{url_for('writing')}}" id="aarchive" name="aarchive">writing memoir</a></li>
+ 
+        <li id="lifriends" name="lifriends" ><a href="{{url_for('welcome')}}" id="friends" name= "friends" >friends</a></li>
+ 
+        <li><form action="{{url_for('home')}}" method="post" id="search" name="search" class="search">
+ 	
+        <td><input type="text" name="txtsearch" size="20" maxlength="40"></td>
+
+            <input type="submit" value="search" id="submitsearch" name="submitsearch" action="{{url_for('test')}}"/>
+ 
+            </form>
+ </li>
+ 
+	</ul>
+ 
+    </div>
+
+    <div  > 
+ 
+    	<form action="{{url_for('tanzimprofile')}}" method="post" class="edtform" >
+ 	<img src="static\img\o1.jpg" alt="yourprofile" height="50" width="50" >
+ 	
+        <table align="center"  >
+ 
+ 	<tr>
+	<td><form action="{{url_for('tanzimprofile')}}" method="post">
+
+	<input type="file" name="file" multiple value="choose file" placeholder="choose image" class="testbutton"><!--for upload image-->
+	<input type="submit" value="ok" name="ok" class="testbutton">
+	</form></td>
+	<tr>
+        	<tr >
+            	<td><p>about you</p></td>
+ 
+            </tr>
+            <td colspan="2"><hr></td>
+        	<tr >
+            	<td>Firstname:</td>
+ 
+        <td><input type="text" name="firstname" size="20" maxlength="30"></td>
+ 
+      </tr>
+ 
+      <tr>
+ 
+       <td>Lastname:</td>
+ 
+        <td><input type="text" name="lastname" size="20" maxlength="30" ></td>
+      </tr>
+      <tr> 
+       <td>Age:</td>
+        <td><input type="text" name="age" size="4" maxlength="4" > </td> 
+      </tr>
+      <tr>
+      	<td>Gender:</td>
+        <td>Male<input type= "radio" name="male" value="male"><br>
+        Female<input type="radio" name="male" value="female"  ></td>
+        </tr>
+      <tr>
+       <td>Mail:</td>
+        <td><input type="text" name="mail" size="20" maxlength="40" ></td> 
+        </tr> 
+        <tr>
+      <td>Country:</td>
+
+        <td><input type="text" name="country" size="20" maxlength="30" ></td> 
+      </tr>
+      <td colspan="2"><hr></td>
+      <tr>
+      	<td colspan="2"><p>work and education</p></td>
+      </tr>
+       <tr>
+       <td>Education:</td>
+        <td><input type="text" name="education" size="20" maxlength="30" ></td>   
+      </tr>
+      <tr>
+      <td>Work:</td>
+        <td><input type="text" name="work" size="20" maxlength="30" placeholder="where have you work?" ></td>
+      </tr>
+      <tr>
+      <td>College:</td>
+        <td><input type="text" name="college" size="25" maxlength="30" placeholder="where did you go to college?" ></td>
+      </tr>
+      <tr>
+      <td>School:</td>
+        <td><input type="text" name="school" size="25" maxlength="30" placeholder="where did you go to school?" ></td>
+      </tr>
+      <td colspan="2"><hr></td>
+      <tr>
+      	<td>Biography:</td><br><br> 
+         <td><textarea rows="5" cols="50" name="biography" style="margin-top:84px;" 		  				 			placeholder="axplain about yourself to your friends can know you"></textarea><br>
+ 
+ 
+            <input type="submit" value="send" class="testbutton" name="send">
+ 
+ 
+            <input type="reset" value="reset" class="testbutton" name="reset"></td>
+            </tr>
+        </table>
+        </form>
+    </div>
+</body>
+</html>
+ 
+ 
+

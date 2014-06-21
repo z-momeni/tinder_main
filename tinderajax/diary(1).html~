@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+Design by http://www.bluewebtemplates.com
+Released for free under a Creative Commons Attribution 3.0 License
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Tinder</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+<!-- CuFon: Enables smooth pretty custom font rendering. 100% SEO friendly. To disable, remove this section -->
+<script type="text/javascript" src="js/cufon-yui.js"></script>
+<script type="text/javascript" src="js/arial.js"></script>
+<script type="text/javascript" src="js/cuf_run.js"></script>
+
+<script src="js.1.11.js"></script>
+<!-- CuFon ends -->
+</head>
+<body>
+<div class="main">
+
+  <div class="header">
+    <div class="header_resize">
+      <div class="logo"><h1><a href="home.html"><span>tinder</span></a></h1></div>
+      <div class="clr"></div>
+      <div class="menu_nav">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="mydiary.html">My Diary</a></li>
+          <li><a href="writing memoir.html">Writing Memoir</a></li>
+          <li><a href="friends.html">Friends</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="settings.html">Settings</a></li>
+          <li><a href="about us.html">About Us</a></li>
+          <li><a href="">Sign Out</a></li>
+        </ul>
+      </div>
+      <div class="searchform">
+        <form id="search" name="search" method="post" action="">
+          <input name="button_search" src="images/search_btn.gif" class="button_search" type="image" />
+          <span><input name="search" class="editbox_search" id="editbox_search" maxlength="80" value="Search" type="text" /></span>
+          <div class="clr"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+        <div class="article">
+            {%block content%}
+            {% for post in posts %}
+            <div id="post.id">
+            <h2><span>{{post.title}}</span></h2>
+            <p>Posted by <a href="#">{{post.user}}</a> <span>&nbsp;&bull;&nbsp;</span> Filling {{post.feel}} <span>&nbsp;&bull;&nbsp;</span> tagged {{post.tag}}</p>
+            <div class="image">
+                <img src="" alt=”UserProfilePicture” width="100" height="100" alt="image" class="fl" />
+            </div>
+            <div class="text">
+                <a>{{post['text']}}</a>
+            </div>
+            <p><a href="#" class="obg">Read more</a><span>&nbsp;&bull;&nbsp;</span> <p>{{post.year}}/{{post.month}}/{{post.day}}</p>
+
+                <div id="comment"></div>
+                <!--for comment-->
+                <script type="text/javascript">
+                   /* $(document).ready(function(){
+                        $("#comme").click(function(){
+                            $.ajaxSetup({url:"http://172.17.11.178:5000",success:function(result){
+                                alert(result.success);
+                                var inputname = $("input#l").val();
+                                $("div#comment").html(inputname);}});
+                            $.ajax();
+                        });
+                    });*/
+                   $(document).ready(function(){
+                       $('button#comme').click(function(){
+			   var salam = $('input#l').val();
+			   var menuId = $('button#comme').attr("postid");
+                           $.getJSON("http://127.0.0.1:5000", {
+                               comment: salam ,
+			       Id:menuId
+                           }, function(data){
+                              
+			$("div#comment").html(salam)
+                           });
+
+             
+                   var request = $.ajax({
+                       url: "http://172.17.11.178:5000",
+                       type: "POST",
+                       data: {id: menuId, comment: salam},
+                       dataType: "json"
+                   });});
+                       /* $("div#comment").html(result)/*alert(result)});*/
+                    /*});*/
+                   request.done(function(salam) {
+                       alert(salam);
+
+});});
+                </script>
+                <!--action="form_action.asp"-->
+
+                <input id="l" type="text" name = "hi" >
+                <button id="comme" type="submit" postid="{{post.id}}">comment</button>
+                <!--<button type="submit">like</button>-->
+                <div id="result"></div>
+                <button  id="likebtn">like</button>
+                <!--script for like-->
+               <!-- <script type="text/javascript">
+                    $(document).ready(function(){
+                    $("#likebtn").click(function(){
+                    $("#result").load("url of likes value #post.id");/*$("#result").load("files/loadtxt.txt");*/
+                    });
+                    });
+                </script>-->
+
+              <!-- <script>
+//                    var id= $({{post.id}});
+                    $(document).ready(function(){
+                        $('button#likebtn').click(function(){
+//                            console.log("clicked");
+                            console.log($(this).attr('id'));
+                            $.post(" http://172.17.11.178:5000",
+                                    {
+                                        like:id
+                                       /* city:"Duckburg"*/
+                                    },
+                                    function(data,status){
+                                        alert("Status:  "+ status);
+                                        $("#result").html(Data);
+
+                                    });
+                        });
+                    });
+                </script>
+
+                <!--<input id="fname" type="text">
+                <input onclick="comment()" type="submit">-->
+        </div>
+            </div>
+          {% endfor %}
+          {% endblock %}
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="gadget">
+          <h2 class="star"><span>Sidebar</span> Menu</h2><div class="clr"></div>
+          <ul class="sb_menu">
+              <li><a href="home.html">Home</a></li>
+              <li><a href="mydiary.html">My Diary</a></li>
+              <li><a href="writing memoir.html">Writing Memoir</a></li>
+              <li><a href="friends.html">Friends</a></li>
+              <li><a href="profile.html">Profile</a></li>
+              <li><a href="settings.html">Settings</a></li>
+              <li><a href="about us.html">About Us</a></li>
+          </ul>
+        </div>
+        <div class="gadget">
+          <h2 class="star"><span>Sponsors</span></h2><div class="clr"></div>
+          <ul class="ex_menu">
+            <li><a href="http://www.dreamtemplate.com" title="Website Templates">DreamTemplate</a><br />Over 6,000+ Premium Web Templates</li>
+            <li><a href="http://www.templatesold.com" title="WordPress Themes">TemplateSOLD</a><br />Premium WordPress &amp; Joomla Themes</li>
+            <li><a href="http://www.imhosted.com" title="Affordable Hosting">ImHosted.com</a><br />Affordable Web Hosting Provider</li>
+            <li><a href="http://www.dreamstock.com" title="Stock Photos">DreamStock</a><br />Download Amazing Stock Photos</li>
+            <li><a href="http://www.evrsoft.com" title="Website Builder">Evrsoft</a><br />Website Builder Software &amp; Tools</li>
+            <li><a href="http://www.myvectorstore.com" title="Stock Icons">MyVectorStore</a><br />Royalty Free Stock Icons</li>
+          </ul>
+        </div>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+
+  <div class="fbg">
+    <div class="fbg_resize">
+      <div class="col c1">
+        <h2><span>Image Gallery</span></h2>
+        <a href="#"><img src="images/pic1.jpg" width="56" height="56" alt="pix" /></a>
+        <a href="#"><img src="images/pic2.jpg" width="56" height="56" alt="pix" /></a>
+        <a href="#"><img src="images/pic3.jpg" width="56" height="56" alt="pix" /></a>
+        <a href="#"><img src="images/pic4.jpg" width="56" height="56" alt="pix" /></a>
+        <a href="#"><img src="images/pic5.jpg" width="56" height="56" alt="pix" /></a>
+        <a href="#"><img src="images/pic6.jpg" width="56" height="56" alt="pix" /></a>
+      </div>
+      <div class="col c2">
+        <h2><span>Lorem Ipsum</span></h2>
+        <p>Lorem ipsum dolor<br />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. <a href="#">Morbi tincidunt, orci ac convallis aliquam</a>, lectus turpis varius lorem, eu posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum, dui pede condimentum odio, ac blandit ante orci ut diam.</p>
+      </div>
+      <div class="col c3">
+        <h2><span>About</span></h2>
+        <img src="images/white.jpg" width="56" height="56" alt="pix" />
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo. llorem, eu posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum. <a href="#">Learn more...</a></p>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer_resize">
+      <p class="lf">&copy; Copyright MyWebSite. Designed by Blue <a href="http://www.bluewebtemplates.com">Website Templates</a></p>
+      <ul class="fmenu">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="mydiary.html">My Diary</a></li>
+          <li><a href="writing memoir.html">Writing Memoir</a></li>
+          <li><a href="friends.html">Friends</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="settings.html">Settings</a></li>
+          <li><a href="about us.html">About Us</a></li>
+      </ul>
+      <div class="clr"></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

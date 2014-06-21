@@ -1,0 +1,82 @@
+﻿<!doctype html>
+<html>
+<head>
+<title>sign up</title>
+  <style type="text/css">
+    body{ background-image:url("/static/img/01.jpg"); background-repeat:no-repeat; background-size:cover; background-attachment:scroll;}
+    form{ color: sandybrown;}
+    p
+{font-family:arial; font-size:50pt; font-style:italic; text-align:center;
+color:Cornsilk ;
+position:relative;
+animation:mymove 5s infinite;
+animation-delay:-2s;
+animation-iteration-count:1;
+
+/*Safari and Chrome*/
+-webkit-animation:mymove 4s infinite;
+-webkit-animation-delay:-2s;
+-webkit-animation-iteration-count:1;
+}
+
+@keyframes mymove
+{
+from {left:-300px;}
+to {left:300px;}
+from {left:300px;}
+to {left:-300px;}
+}
+
+@-webkit-keyframes mymove /*Safari and Chrome*/
+{
+from {left:-300px;}
+to {left:300px;}
+from {left:300px;}
+to {left:-300px;}
+}
+  </style>
+</head>
+<body background="/static/img/01.jpg">
+<script>
+function go() {
+    window.location.assign("main.html");
+}
+</script> 
+ <p>tinder</p> 
+ <div align="center">
+  <form action="{{url_for('signup')}}" method="post">
+    <table border="0" style="margin-top:20px; border-color:white border-style:ridge;">
+      <tr>
+       <td>username:</td>
+       <td><input type="text" name="username" size="20" maxlength="30"></td>
+      </tr>
+      <tr>
+       <td>password:</td>
+       <td><input type="password" name="password" size="20" maxlength="10" ></td>
+      </tr>
+      <tr>
+       <td>confirm your password</td>
+       <td><input type="password" name="a_password" size="20" maxlength="10" > </td> 
+      </tr>
+      <tr>
+       <td>mail:</td>
+       <td><input type="text" name="mail" size="20" maxlength="40" ></td>  
+      </tr>
+      <tr>
+      <td> birthday:
+	
+       year:<input type="text" name="year" size="5" maxlength="5" >month:<input type="text" name="month" size="5" maxlength="2" ></td>
+        <td> day:<input type="text" name="day" size="5" maxlength="2" ></td>
+       </tr>
+      <tr>
+       <td colspan="2"  align="center" >
+       <input type="submit" value="send" name="send" onclick="go()">
+       <input type="reset" value="reset" name="reset" ></td>
+      </tr>
+        
+    
+    </table>
+   </form>
+ </div>
+</body>
+</html>
